@@ -6,7 +6,7 @@ import java.util.Scanner;
 public class barnCrud {
 static List<Barn> barneListe = new ArrayList<>();
 static List<Parents> parentsListe = new ArrayList<>();
-Scanner input = new Scanner(System.in);
+private Scanner input = new Scanner(System.in);
 private int idChoice;
 private int switchChoice;
 private boolean success = false;
