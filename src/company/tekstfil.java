@@ -1,27 +1,19 @@
 package company;
-
 import java.io.*;
-import java.util.ArrayList;
-import java.util.List;
 import java.util.Scanner;
 
 public class tekstfil {
-
-
-    List<Barn> barneListeTekstfil;
-    barnCrud barncrud = new barnCrud();
-    ArrayList<Barn> barneliste = new ArrayList<>();
-    ArrayList<Parents> parentsliste = new ArrayList<>();
-
+    private String birthday;
+    private String firstName;
+    private String lastName;
+    private int id;
 
     public void writeFile() {
-
         try {
-
             FileWriter filewriter1 = new FileWriter("barneoversigt.rtf");
             BufferedWriter bufferedwriter = new BufferedWriter(filewriter1);
 
-            for(int i = 0;i < barncrud.barneListe.size();i++) {
+            for(int i = 0; i < barnCrud.barneListe.size(); i++) {
                 if(i != 0) {
                     bufferedwriter.newLine();
                 }
@@ -32,7 +24,7 @@ public class tekstfil {
 
             FileWriter fileWriter2 = new FileWriter("parentscontact.rtf");
             BufferedWriter bufferedWriter2 = new BufferedWriter(fileWriter2);
-            for(int i = 0;i < barncrud.parentsListe.size(); i++){
+            for(int i = 0; i < barnCrud.parentsListe.size(); i++){
                 if(i !=0) {
                     bufferedWriter2.newLine();
                 }
@@ -41,31 +33,17 @@ public class tekstfil {
             }
             bufferedWriter2.close();
 
-
         } catch (IOException e) {
             e.printStackTrace();
             System.out.println("Det er sket en fejl, prøv igen. Tjek eventuelt om du har oprettet en tekstfil til forældre og børne data");
         }
-
-
     }
 
-
-
-
-
-
-
     public void readFile() throws IOException {
-        String birthday = null;
-        String firstName = null;
-        String lastName = null;
-        int id = 0;
-
-        String filelocation = "barneoversigt.rtf";
+        String fileLocation = "barneoversigt.rtf";
 
         try {
-            Scanner scanner = new Scanner(new File(filelocation));
+            Scanner scanner = new Scanner(new File(fileLocation));
             while (scanner.hasNextLine()) {
                 String line = scanner.nextLine();
                 String[] split = line.split("\\s");
@@ -78,8 +56,6 @@ public class tekstfil {
                 barnCrud.barneListe.add(barneliste);
 
             }
-
-
         } catch (FileNotFoundException e) {
             System.out.println("Tjek at den relevante tekstfil ligger i programmet");
             e.printStackTrace();
@@ -87,16 +63,11 @@ public class tekstfil {
     }
 
     public void readFileParents() throws IOException {
-        String birthday = null;
-        String firstName = null;
-        String lastName = null;
-        int id = 0;
         int tlfnr;
-
-        String filelocationparents = "parentscontact.rtf";
+        String fileLocationParents = "parentscontact.rtf";
 
         try {
-            Scanner scanner = new Scanner(new File(filelocationparents));
+            Scanner scanner = new Scanner(new File(fileLocationParents));
             while (scanner.hasNextLine()) {
                 String line = scanner.nextLine();
                 String[] split = line.split("\\s");
@@ -105,31 +76,16 @@ public class tekstfil {
                 birthday = split[2];
                 id = Integer.parseInt(split[3]);
                 tlfnr = Integer.parseInt(split[4]);
-
                 Parents parentsliste = new Parents(firstName, lastName, birthday, id, tlfnr);
                 barnCrud.parentsListe.add(parentsliste);
-
             }
-
-
         } catch (FileNotFoundException e) {
             System.out.println("Tjek at den relevante tekstfil ligger i programmet");
             e.printStackTrace();
         }
     }
 
-
-
-
-
-
-
-
-
-
-
-    public void printliste(){
-
+    public void printListe(){
         System.out.printf("%-12s", "First Name");
         System.out.printf("%-12s", "Last Name");
         System.out.printf("%-12s", "Birthday");
@@ -137,22 +93,15 @@ public class tekstfil {
         System.out.println();
 
         for(Barn b : barnCrud.barneListe){
-
             System.out.printf("%-12s", b.getFirstName());
             System.out.printf("%-12s", b.getLastName());
             System.out.printf("%-12s", b.getBirthday());
             System.out.printf("%-12s", b.getId());
             System.out.println();
-
-
         }
-
-
-
     }
 
     public void printParentsListe() {
-
         System.out.printf("%-12s", "First Name");
         System.out.printf("%-12s", "Last Name");
         System.out.printf("%-12s", "Birthday");
@@ -161,23 +110,19 @@ public class tekstfil {
         System.out.println();
 
         for (Parents p : barnCrud.parentsListe) {
-
             System.out.printf("%-12s", p.getFirstName());
             System.out.printf("%-12s", p.getLastName());
             System.out.printf("%-12s", p.getBirthday());
             System.out.printf("%-12s", p.getId());
             System.out.printf("%-12s", p.getTlfnr());
             System.out.println();
-
         }
-    }       public void exitAndWrite(){
-
-        writeFile();
-        System.exit(0);
-
     }
 
-
+    public void exitAndWrite(){
+        writeFile();
+        System.exit(0);
+    }
 }
 
 

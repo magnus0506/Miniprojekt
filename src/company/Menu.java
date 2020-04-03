@@ -31,17 +31,17 @@ public class Menu {
                     break;
             case 2:
                 System.out.println("Du kan nu slette et barn i systemet, skriv ID'et på barnet der skal slettes");
-                textfil.printliste();
+                textfil.printListe();
                 barnecrud.deleteBarn();
                 break;
             case 3:
                 System.out.println("Du kan nu opdatere et barn i systemet");
-                textfil.printliste();
+                textfil.printListe();
                 barnecrud.opdaterBarn();
                 break;
             case 4:
                 System.out.println("Her er en liste af børn i registeret");
-                textfil.printliste();
+                textfil.printListe();
                 break;
             case 5:
                 System.out.println("Du kan nu oprette en ny forældre i systemet");
@@ -85,12 +85,12 @@ public class Menu {
                 break;
             case 2:
                 System.out.println("Du kan nu opdatere et barn i systemet");
-                textfil.printliste();
+                textfil.printListe();
                 barnecrud.opdaterBarn();
                 break;
             case 3:
                 System.out.println("Her er en liste af børn i registeret");
-                textfil.printliste();
+                textfil.printListe();
                 break;
             case 4:
                 textfil.exitAndWrite();
