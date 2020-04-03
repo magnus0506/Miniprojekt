@@ -8,7 +8,6 @@ public class barnCrud {
 static List<Barn> barneListe = new ArrayList<>();
 static List<Parents> parentsListe = new ArrayList<>();
 Scanner input = new Scanner(System.in);
-int repeat;
 jaNej janej = new jaNej();
 
 
