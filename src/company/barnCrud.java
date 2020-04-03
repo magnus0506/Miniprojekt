@@ -14,7 +14,6 @@ private int id;
 private String birthday;
 private String firstName;
 private String lastName;
-private int tlfNr;
 
     public void opretBarn(){
         System.out.println("Hvad er barnets fornavn?");
@@ -101,7 +100,7 @@ private int tlfNr;
         System.out.println("Indtast ID svarende til barnets");
         id = input.nextInt();
         System.out.println("Hvad er forældrens telefon nummer?");
-        tlfNr =input.nextInt();
+        int tlfNr = input.nextInt();
 
         Parents parent = new Parents(firstName, lastName, birthday, id, tlfNr);
         parentsListe.add(parent);
