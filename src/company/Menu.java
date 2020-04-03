@@ -26,9 +26,9 @@ public class Menu {
 
         switch (valg) {
             case 1:
-                    System.out.println("Du opretter ny et nyt barn i systemet");
-                    barnecrud.opretBarn();
-                    break;
+                System.out.println("Du opretter ny et nyt barn i systemet");
+                barnecrud.opretBarn();
+                break;
             case 2:
                 System.out.println("Du kan nu slette et barn i systemet, skriv ID'et på barnet der skal slettes");
                 textfil.printListe();
