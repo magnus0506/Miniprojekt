@@ -29,7 +29,7 @@ public class Login {
                 do {
                     switch (u.getBrugerNiveau()) {
                         case 1:
-                            menu.administratorMenu();
+                            menu.adminMenu();
                             break;
                         case 2:
                             menu.pædagogMenu();

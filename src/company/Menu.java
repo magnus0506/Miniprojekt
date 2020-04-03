@@ -8,7 +8,7 @@ public class Menu {
     private Scanner input = new Scanner(System.in);
     private int valg;
 
-    public void administratorMenu() throws IOException {
+    public void adminMenu() throws IOException {
         System.out.println("Som administrator har du adgang til alle funktioner i systemet");
         System.out.println("Børnefunktioner:");
         System.out.println("Tryk 1 for at oprette et nyt barn i børneregisteret");
@@ -25,7 +25,6 @@ public class Menu {
         valg = input.nextInt();
 
         switch (valg) {
-
             case 1:
                     System.out.println("Du opretter ny et nyt barn i systemet");
                     barnecrud.opretBarn();
@@ -80,7 +79,6 @@ public class Menu {
         valg = input.nextInt();
 
         switch (valg) {
-
             case 1:
                 System.out.println("Du opretter ny et nyt barn i systemet");
                 barnecrud.opretBarn();
