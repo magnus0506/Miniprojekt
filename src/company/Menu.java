@@ -32,7 +32,7 @@ public class Menu {
 
             case 1:
                     System.out.println("Du opretter ny et nyt barn i systemet");
-                    barnecrud.opretbarn();
+                    barnecrud.opretBarn();
                     break;
 
             case 2:
@@ -94,7 +94,7 @@ public class Menu {
 
             case 1:
                 System.out.println("Du opretter ny et nyt barn i systemet");
-                barnecrud.opretbarn();
+                barnecrud.opretBarn();
                 break;
 
             case 2:

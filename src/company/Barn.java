@@ -1,19 +1,17 @@
 package company;
 
 public class Barn{
-
 private String birthday;
 private String firstName;
 private String lastName;
 private int id;
 
-
-public Barn(String firstName, String lastName, String birthday, int id){
-this.firstName = firstName;
-this.lastName = lastName;
-this.birthday = birthday;
-this.id = id;
-}
+    public Barn(String firstName, String lastName, String birthday, int id){
+        this.firstName = firstName;
+        this.lastName = lastName;
+        this.birthday = birthday;
+        this.id = id;
+    }
 
     public String getBirthday() {
         return birthday;
