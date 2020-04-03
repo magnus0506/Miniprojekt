@@ -1,15 +1,13 @@
 package company;
-
 import java.io.IOException;
 import java.util.Scanner;
 
 public class Login {
-
-    Scanner input = new Scanner(System.in);
-    LoginBrugere loginbrugere = new LoginBrugere();
-    Menu menu = new Menu();
-    Boolean again;
-    jaNej janej = new jaNej();
+    private Scanner input = new Scanner(System.in);
+    private LoginBrugere loginbrugere = new LoginBrugere();
+    private Menu menu = new Menu();
+    private jaNej janej = new jaNej();
+    private Boolean again;
 
     public void systemLogin() throws IOException {
         LoginBrugere administrator = new LoginBrugere("administrator", "1234", 1);
@@ -33,7 +31,6 @@ public class Login {
                         case 1:
                             menu.administratorMenu();
                             break;
-
                         case 2:
                             menu.pædagogMenu();
                             break;
@@ -43,9 +40,7 @@ public class Login {
                 } while (again);
             }
         }
-
     }
-
-    }
+}
 
 
