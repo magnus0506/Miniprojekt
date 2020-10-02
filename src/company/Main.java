@@ -10,5 +10,4 @@ public class Main {
         login.systemLogin();
         tekstFil.writeFile();
     }
-    //heyo
 }
